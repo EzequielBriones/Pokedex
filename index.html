@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- ------------------------------ Meta Tags -------------------------------->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- ------------------------------ End of Meta Tags -------------------------------->
+
+    <!-- ------------------------------ Favicons -------------------------------->
+    <link rel="shortcut icon" href="vendors/favicon/favicon.png" type="image/x-icon" />
+    <!-- ------------------------------ End of Favicons -------------------------------->
+
+    <link rel="shortcut icon" href="img/pokeball.png" type="image/x-icon" />
+    <!-- ------------------------------ Style Link -------------------------------->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css" />
+    <!-- ------------------------------ End of Style Link -------------------------------->
+
+    <!-- ------------------------------ Title Tag -------------------------------->
+    <title>Pokedex</title>
+    <!-- ------------------------------ End of Title Tag -------------------------------->
+  </head>
+  <body>
+    <!-- ------------------------------ Main Start -------------------------------->
+    <main>
+      <header>
+        <h1>Pokedex</h1>
+        <div id="error"></div>
+        <form id="form" onsubmit="getPkmn(event)">
+          <input class="pkmn__name" id="buscador" type="text" name="pokemon" placeholder="Ingrese un numero o nombre de Pokemon" />
+          <button type="submit" class="pkmn__btn"><i class="fa fa-search"></i></button>
+        </form>
+      </header>
+      <!-- ///// Data-Container Start /////-->
+      <section id="data-container"></section>
+      <!-- ///// Data-Container End /////-->
+
+      <!-- ///// Paginator Start /////-->
+      <section class="paginator">
+        <button class="pag-btn" id="prev-btn"><i class="fa fa-angle-double-left" aria-hidden="true"></i></button>
+        <button class="pag-btn" id="next-btn"><i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
+      </section>
+      <!-- ///// Paginator End /////-->
+      <div class="spinner"></div>
+    </main>
+
+    <!-- ------------------------------ Main End -------------------------------->
+
+    <!-- ------------------------------ Javascript Script Start -------------------------------->
+    <script src="app.js"></script>
+    <!-- ------------------------------ Javascript Script End -------------------------------->
+  </body>
+</html>
