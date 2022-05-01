@@ -42,19 +42,6 @@ nextBtn.addEventListener("click", () => {
 
 // Intento por agregar una validación al formulario, fallido
 
-// form.addEventListener("submit", (e) => {
-//   let messages = "";
-//   if (buscador.value > 898 || buscador.value < 0) {
-//     messages = "Por favor ingresa un numero entre 1 y 898";
-//     console.log("Test");
-//   }
-
-//   if (messages.length > 0) {
-//     e.preventDefault();
-//     errorEl.innerText = messages;
-//   }
-// });
-
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////// FUNCTIONS //////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -83,16 +70,21 @@ function getPkmns(offset, limit) {
 }
 
 function getPkmn(event) {
-  borrarCards();
-  paginador.innerHTML = "";
   event.preventDefault();
   const { value } = event.target.pokemon;
-  fetch(`https://pokeapi.co/api/v2/pokemon/${value.toLowerCase()}`)
-    .then((res) => res.json())
-    .then((data) => {
-      renderPkmn(data);
-      bgColor(data);
-    });
+  if (buscador.value > 898 || buscador.value <= 0) {
+    errorEl.innerHTML = "Por favor ingresa un numero entre 1 y 898";
+  } else {
+    borrarCards();
+    paginador.innerHTML = "";
+    fetch(`https://pokeapi.co/api/v2/pokemon/${value.toLowerCase()}`)
+      .then((res) => res.json())
+      .then((data) => {
+        renderPkmn(data);
+        bgColor(data);
+        errorEl.innerHTML = "";
+      });
+  }
 }
 
 function renderPkmn(data) {

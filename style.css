@@ -7,6 +7,10 @@
   box-sizing: border-box;
 }
 
+a {
+  text-decoration: none;
+}
+
 h1 {
   font-size: 2.7rem;
   letter-spacing: 0.1rem;
@@ -14,7 +18,6 @@ h1 {
 }
 
 body {
-  background-image: url(assets/images/fondo.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   color: rgba(0, 0, 0, 0.829);
@@ -30,7 +33,7 @@ header {
   padding: 1rem;
   backdrop-filter: blur(5px);
   border-bottom: 3px solid black;
-  padding-bottom: 25px;
+  padding-bottom: 10px;
   color: white;
 }
 
@@ -42,6 +45,12 @@ header {
   border: 2px solid #f44336;
   cursor: pointer;
   font-size: 1rem;
+}
+
+#error {
+  color: black;
+  font-size: 1.1rem;
+  margin-top: .4rem;
 }
 
 /****************************************** Main Section **********************************/
